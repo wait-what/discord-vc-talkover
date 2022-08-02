@@ -1,0 +1,11 @@
+# Not worthy of git
+node_modules/
+dist/
+
+# Private
+.env
+
+# Lockfiles are cringe
+yarn.lock
+yarn-error.log
+package-lock.json
