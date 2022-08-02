@@ -1,4 +1,5 @@
 # Discord VC Talk-over
+A Discord bot that talks over specified users in a voice channel.
 
 ## Dependencies
 - Node.js

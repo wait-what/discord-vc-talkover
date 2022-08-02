@@ -49,8 +49,10 @@ client.once('ready', () => {
         const speaking = (process.env.TALKOVER_USERS as string).split(',').find(id => connection.receiver.speaking.users.has(id))
 
         if (speaking) {
+            logger.info('Unpausing')
             player.unpause()
         } else {
+            logger.info('Pausing')
             player.pause()
         }
     }, 50)
