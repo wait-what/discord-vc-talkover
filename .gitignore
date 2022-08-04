@@ -1,6 +1,7 @@
 # Not worthy of git
 node_modules/
 dist/
+audio.mp3
 
 # Private
 .env

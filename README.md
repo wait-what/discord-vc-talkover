@@ -6,6 +6,13 @@ A Discord bot that talks over specified users in a voice channel.
 - Yarn
 - Git (optional)
 
+### Build tools
+If you get errors while yarn builds the packages, you might need to install build tools and/or update Node.js.
+
+- Windows: Visual Studio 2015/2017
+- Debian-based: `apt-get install build-essential`
+- Arch-based: `pacman -Sy base-devel`
+
 ## Running
 - Clone the project
 ```
