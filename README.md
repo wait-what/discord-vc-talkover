@@ -1,36 +1,25 @@
 # Discord VC Talk-over
-A Discord bot that talks over specified users in a voice channel.
-
-## Dependencies
-- Node.js
-- Yarn
-- Git (optional)
-
-### Build tools
-If you get errors while yarn builds the packages, you might need to install build tools and/or update Node.js.
-
-- Windows: Visual Studio 2015/2017
-- Debian-based: `apt-get install build-essential`
-- Arch-based: `pacman -Sy base-devel`
+A Discord bot that talks over specified users in a voice channel
 
 ## Running
+- Install `docker` and `docker-compose`
 - Clone the project
 ```
 git clone https://github.com/wait-what/discord-vc-talkover
 cd discord-vc-talkover
 ```
-- Install dependencies
-```
-yarn install
-```
-- Rename `example.env` to `.env`
+- Copy `example_config.env` to `config.env`
 - Set the appropriate values
-- Place `audio.mp3` into the folder (where .env, LICENSE and README is)
-    > NOTE: The audio file has to be LONG. It doesn't restart when it ends, it just pauses/unpauses.
+  - `TOKEN` is your Discord bot token
+  - `TALKOVER_CHANNEL` is the ID of the voice channel you want it to work in
+  - `TALKOVER_USERS` is a list of IDs of users that you want it to annoy
+- Place `audio.mp3` into this folder
+    > NOTE: The audio file has to be LONG. It doesn't loop when it ends, it just pauses/unpauses, because I couldn't be bothered.
 - Start the bot
-```
-yarn start
-```
+  ```
+  docker-compose up
+  ```
+  > or `docker-compose up -d` to run it in the background, then `docker-compose down` to stop
 
 ## License
 This project is licensed under the [MIT license](./LICENSE).

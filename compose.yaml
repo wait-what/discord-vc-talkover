@@ -1,0 +1,8 @@
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Containerfile
+    env_file: ./config.env
+    volumes:
+      - ./audio.mp3:/app/audio.mp3:ro

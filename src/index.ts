@@ -1,7 +1,6 @@
-import 'dotenv/config'
 import Log75, { LogLevel } from 'log75'
 import { Client, GatewayIntentBits, ChannelType } from 'discord.js'
-const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus, VoiceReceiver } = require('@discordjs/voice');
+const { joinVoiceChannel, createAudioPlayer, createAudioResource, AudioPlayerStatus, VoiceReceiver } = require('@discordjs/voice')
 
 export const logger = new Log75(LogLevel.Debug)
 const client = new Client({
@@ -45,15 +44,22 @@ client.once('ready', () => {
     player.play(track)
     player.pause()
 
+    let talkingOver = false
     setInterval(() => {
-        const speaking = (process.env.TALKOVER_USERS as string).split(',').find(id => connection.receiver.speaking.users.has(id))
+        const someoneSpeaking = (process.env.TALKOVER_USERS as string).split(',').find(id => connection.receiver.speaking.users.has(id))
 
-        if (speaking) {
-            logger.info('Unpausing')
-            player.unpause()
+        if (someoneSpeaking) {
+            if (!talkingOver) {
+                logger.info('Unpausing')
+                player.unpause()
+            }
+            talkingOver = true
         } else {
-            logger.info('Pausing')
-            player.pause()
+            if (talkingOver) {
+                logger.info('Pausing')
+                player.pause()
+            }
+            talkingOver = false
         }
     }, 50)
 })

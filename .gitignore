@@ -4,7 +4,7 @@ dist/
 audio.mp3
 
 # Private
-.env
+config.env
 
 # Lockfiles are cringe
 yarn.lock
