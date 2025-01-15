@@ -8,4 +8,6 @@ copy ./package.json /app
 run yarn install
 
 copy ./ /app 
+run yarn build
+
 entrypoint yarn start
