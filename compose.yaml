@@ -1,8 +1,7 @@
 services:
   bot:
-    build:
-      context: .
-      dockerfile: Containerfile
+    image: ghcr.io/wait-what/discord-vc-talkover:latest
+    # build: .
     env_file: ./config.env
     volumes:
       - ./audio.mp3:/app/audio.mp3:ro

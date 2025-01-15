@@ -1,3 +1,14 @@
+# Not worthy of git
+node_modules/
+dist/
+audio.mp3
+
+# Private
+config.env
+
+# Docker specific
+compose.yaml
+Containerfile
 example_config.env
-README.md
 LICENSE
+README.md

@@ -8,13 +8,12 @@
   "description": "A discord bot that talks over your friends.",
   "repository": "https://gitlab.com/Wait_What_/my-project.git",
   "devDependencies": {
-    "@types/node": "^14.14.10",
-    "typescript": "^4.4.4"
+    "@types/node": "^22.10.6",
+    "typescript": "^5.7.3"
   },
   "dependencies": {
     "@discordjs/voice": "^0.18.0",
     "discord.js": "^14.1.2",
-    "dotenv": "^16.0.1",
     "log75": "^2.1.0",
     "opusscript": "^0.1.1",
     "sodium-native": "^4.3.1"

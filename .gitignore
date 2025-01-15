@@ -5,8 +5,3 @@ audio.mp3
 
 # Private
 config.env
-
-# Lockfiles are cringe
-yarn.lock
-yarn-error.log
-package-lock.json
